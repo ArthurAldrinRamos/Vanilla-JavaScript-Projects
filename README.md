@@ -1,5 +1,5 @@
 ARTHUR ALDRIN RAMOS
-# JavaScript-Projects
+# Vanilla-JavaScript-Projects
 ==============================
 
 1. Guess My Number
