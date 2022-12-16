@@ -61,14 +61,12 @@ btnRoll.addEventListener(`click`, () => {
     currentScore = 0;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
+    playerBg1.classList.toggle(`player--active`);
+    playerBg0.classList.toggle(`player--active`);
     if (activePlayer === 0) {
       activePlayer = 1;
-      playerBg1.classList.add(`player--active`);
-      playerBg0.classList.remove(`player--active`);
     } else {
       activePlayer = 0;
-      playerBg1.classList.remove(`player--active`);
-      playerBg0.classList.add(`player--active`);
     }
   }
 });
@@ -77,8 +75,8 @@ btnHold.addEventListener(`click`, () => {
   if (activePlayer === 0) {
     currScore0 += currentScore;
     score0El.textContent = currScore0;
-    playerBg1.classList.add(`player--active`);
-    playerBg0.classList.remove(`player--active`);
+    playerBg1.classList.toggle(`player--active`);
+    playerBg0.classList.toggle(`player--active`);
     if (currScore0 >= 100) {
       alert(`Player 1 Wins! With a score of ${currScore0}`);
       newGame();
@@ -87,8 +85,8 @@ btnHold.addEventListener(`click`, () => {
   } else {
     currScore1 += currentScore;
     score1El.textContent = currScore1;
-    playerBg1.classList.remove(`player--active`);
-    playerBg0.classList.add(`player--active`);
+    playerBg1.classList.toggle(`player--active`);
+    playerBg0.classList.toggle(`player--active`);
     if (currScore1 >= 100) {
       alert(`Player 2 Wins! With a score of ${currScore1}`);
       newGame();
