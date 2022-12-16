@@ -7,6 +7,8 @@ const diceEl = document.querySelector(`.dice`);
 const btnNew = document.querySelector(`.btn--new`);
 const btnRoll = document.querySelector(`.btn--roll`);
 const btnHold = document.querySelector(`.btn--hold`);
+const playerBg0 = document.querySelector(`.player--0`);
+const playerBg1 = document.querySelector(`.player--1`);
 const current0El = document.getElementById(`current--0`);
 const current1El = document.getElementById(`current--1`);
 
@@ -21,6 +23,8 @@ const newGame = () => {
   numHide();
   score0El.textContent = 0;
   score1El.textContent = 0;
+  playerBg1.classList.remove(`player--active`);
+  playerBg0.classList.add(`player--active`);
 
   currScore0 = 0;
   currScore1 = 0;
@@ -32,10 +36,9 @@ const newGame = () => {
 };
 
 //Starting Conditions
+numHide();
 let currScore0 = 0;
 let currScore1 = 0;
-numHide();
-
 let currentScore = 0;
 let activePlayer = 0;
 
@@ -58,7 +61,15 @@ btnRoll.addEventListener(`click`, () => {
     currentScore = 0;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
-    activePlayer = activePlayer === 0 ? 1 : 0;
+    if (activePlayer === 0) {
+      activePlayer = 1;
+      playerBg1.classList.add(`player--active`);
+      playerBg0.classList.remove(`player--active`);
+    } else {
+      activePlayer = 0;
+      playerBg1.classList.remove(`player--active`);
+      playerBg0.classList.add(`player--active`);
+    }
   }
 });
 
@@ -66,6 +77,8 @@ btnHold.addEventListener(`click`, () => {
   if (activePlayer === 0) {
     currScore0 += currentScore;
     score0El.textContent = currScore0;
+    playerBg1.classList.add(`player--active`);
+    playerBg0.classList.remove(`player--active`);
     if (currScore0 >= 100) {
       alert(`Player 1 Wins! With a score of ${currScore0}`);
       newGame();
@@ -74,6 +87,8 @@ btnHold.addEventListener(`click`, () => {
   } else {
     currScore1 += currentScore;
     score1El.textContent = currScore1;
+    playerBg1.classList.remove(`player--active`);
+    playerBg0.classList.add(`player--active`);
     if (currScore1 >= 100) {
       alert(`Player 2 Wins! With a score of ${currScore1}`);
       newGame();
