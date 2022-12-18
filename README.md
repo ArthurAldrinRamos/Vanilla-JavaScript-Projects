@@ -15,6 +15,7 @@ ARTHUR ALDRIN RAMOS
 -If the dice get's a 1, current score of the current player will go to 0
 -Swithces player if the other player get's a 1
 -First to hold 100 points wins
+-Current player's background card will highlight if it's their turn.
 
 
 
