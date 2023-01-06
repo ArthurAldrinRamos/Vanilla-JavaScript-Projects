@@ -17,7 +17,14 @@ ARTHUR ALDRIN RAMOS
 -First to hold 100 points wins
 -Current player's background card will highlight if it's their turn.
 
-4. What to do next??????????????????????
+4. Bank App Mockup
+-Login functionality
+-Displays total amount in an account
+-Displays different movements
+-Send funds functionality
+-Loan funds functionality 
+-Delete account functionality
+-Sort functionality (from highest movement...)
 
 
 
